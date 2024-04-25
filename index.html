@@ -3,16 +3,30 @@
   <head>
     <title>kharms</title>
     <link rel="icon" type="image/png" href="./road.png" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        margin: 0;
+        gap: 1.25rem;
+      }
+      p {
+        font-family: sans-serif;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        margin: 0;
+      }
+      img {
+        align-self: flex-end;
+        height: 3rem;
+        width: 3rem;
+        padding-block-start: 1rem;
+        padding-inline-end: 1rem;
+      }
+    </style>
   </head>
-  <body
-    style="
-      margin: 2em;
-      max-width: 28em;
-      font-family: sans-serif;
-      font-size: 16px;
-      line-height: 20px;
-    "
-  >
+  <body>
     <p>
       He starved to death in a psychiatric ward during the siege of Leningrad. A
       year earlier, he had pretended to be insane to avoid execution. A year
@@ -38,17 +52,6 @@
         >[**]</a
       >
     </p>
-    <img
-      style="
-        width: 24px;
-        height: 24px;
-        float: inline-end;
-        margin-block-start: 1em;
-        margin-block-end: 2em;
-        margin-inline-end: 1em;
-      "
-      src="./road.png"
-      alt="road.png"
-    />
+    <img src="./road.png" alt="road.png" />
   </body>
 </html>
