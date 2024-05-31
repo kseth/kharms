@@ -1,0 +1,4 @@
+user-agent: *
+allow: /
+
+sitemap: https://kharms.ai/sitemap.txt
