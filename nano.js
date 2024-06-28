@@ -7,7 +7,7 @@ window.addEventListener("load", async function () {
     const hasAI = window.ai != null;
 
     const hasNano =
-      (hasAI && (await window.ai.canCreateTextSession())) === "readily";
+      (hasAI && (await window.ai.canCreateTextSession()) !== "no");
 
     if (!hasNano) {
       setError(!hasAI ? "not supported in this browser" : "not ready yet");
