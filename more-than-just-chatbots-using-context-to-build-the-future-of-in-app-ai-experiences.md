@@ -2,9 +2,11 @@
 
 _Written in 2023 for Dopt (now a part of Airtable) as a part of a series on AI_
 
-## Today, text-driven, turn-based chatbots dominate AI experiences
+## Chatbots dominate in-app experiences
 
-We believe there’s a much more interesting problem to solve: building in-app AI assistance. We believe there’s a huge opportunity to help users learn, navigate, and use the interfaces they already work within. What if we could create AI agents that offer contextual help seamlessly integrated into a user’s experience without the user ever needing to think about a prompt?
+Today, text-driven, turn-based chatbots dominate AI experiences. They're generic and over-used, and they typically fall short.
+
+We believe there’s a more interesting problem to solve: building in-app AI assistance. We believe there’s a huge opportunity to help users learn, navigate, and use the interfaces they already work within. What if we could create AI agents that offer contextual help seamlessly integrated into a user’s experience without the user ever needing to think about what specific question to ask or prompt to write?
 
 In this deep dive, we’ll investigate how we might build such experiences and the technical architectures and product considerations that come with them.
 
@@ -24,7 +26,7 @@ As Amelia Wattenberger explains in her article, *[Boo Chatbots: Why Chatbots Are
 
 > Natural language is great at rough direction: teleport me to the right neighborhood. But once ChatGPT has responded, how do I get it to take me to the right house?
 
-We’ve all experienced the struggle to create precise prompts about an app when writing questions to a chatbot. And, even more, we’ve all struggled to translate those answers back into the steps we need to take to be successful.
+We’ve all experienced the struggle to craft precise prompts about an app when writing questions to a chatbot. And, even more, we’ve all struggled to translate those answers back into the steps we need to take to be successful.
 
 Specifically, existing embedded experiences suffer in three key ways:
 
