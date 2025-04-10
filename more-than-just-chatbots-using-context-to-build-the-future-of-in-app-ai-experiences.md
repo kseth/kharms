@@ -1,40 +1,38 @@
-# More than just chatbots: Using context to build the future of in-app AI experiences
+# More than just chatbots: Using context to build the future of in-app AI assistance
 
-_I wrote this in fall/winter 2023 as part of a series on AI for Dopt (subsequently acquired by Airtable)._
+_Written in 2023 for Dopt (now a part of Airtable) as a part of a series on AI_
 
----
+## Today, text-driven, turn-based chatbots dominate AI experiences
 
-Today, text-driven, turn-based chatbots dominate AI experiences.
-
-We believe there’s a much more interesting problem to solve: building in-app AI agents. We believe there’s a huge opportunity to help users learn, navigate, and use the interfaces they already work within. What if we could create AI agents that offer contextual help seamlessly integrated into a user’s experience without the user ever needing to think about a prompt?
+We believe there’s a much more interesting problem to solve: building in-app AI assistance. We believe there’s a huge opportunity to help users learn, navigate, and use the interfaces they already work within. What if we could create AI agents that offer contextual help seamlessly integrated into a user’s experience without the user ever needing to think about a prompt?
 
 In this deep dive, we’ll investigate how we might build such experiences and the technical architectures and product considerations that come with them.
 
 First, we’ll walk through why chatbots might not be the future and explore what alternate models of embedded agents might look like.
 
-Next, we’ll define contexts and how they work in these kinds of systems, and we’ll determine which contexts we want to gather for building in-app agents.
+Next, we’ll define contexts and how they work in these kinds of systems, and we’ll determine which contexts we want to gather for building in-app assistance.
 
-Then, we’ll outline a retrieval architecture built on custom embeddings to find the most relevant signals for a user’s queries and contexts, and we’ll cover a generation architecture which uses a system of multimodal prompts to craft a meaningful response.
+Then, we’ll outline a retrieval architecture built on custom embeddings to find the most relevant signals for a user’s queries and contexts, and we’ll cover a generation architecture which uses a system of multimodal agents to craft a meaningful response.
 
 Finally, we’ll highlight a few of our key learnings from building these in-app AI experiences ourselves.
 
 ## Why not embedded chatbots?
 
-We can start forming a better mental model of in-app agents by asking why we should restrict ourselves to using natural language conversations as our medium for AI agents.
+We can start forming a better mental model of in-app assistance by asking why we should restrict ourselves to using natural language conversations as our medium for AI agents.
 
-As Amelia Wattenberger deftly explains in her article, *[Boo Chatbots: Why Chatbots Are Not the Future](https://wattenberger.com/thoughts/boo-chatbots):*
+As Amelia Wattenberger explains in her article, *[Boo Chatbots: Why Chatbots Are Not the Future](https://wattenberger.com/thoughts/boo-chatbots):*
 
 > Natural language is great at rough direction: teleport me to the right neighborhood. But once ChatGPT has responded, how do I get it to take me to the right house?
 
 We’ve all experienced the struggle to create precise prompts about an app when writing questions to a chatbot. And, even more, we’ve all struggled to translate those answers back into the steps we need to take to be successful.
 
-Specifically, existing embedded chat experiences suffer in three key ways:
+Specifically, existing embedded experiences suffer in three key ways:
 
 1. prompting is imprecise and very chaotic in the sense that small changes in prompts cause a huge change in answers
 2. the user (the question-asker) is burdened with solving the problem of identifying and producing all relevant context for their question
 3. questions and answers are not integrated into the app itself but instead surfaced indirectly in separate and often disruptive UIs
 
-## Exploring alternate models of embedded in-app agents
+## Exploring alternate models of embedded in-app assistance
 
 Within an app, a user’s interactions can follow many distinct paths — they might navigate pages by clicking on a link, they might close an announcement modal, or they might type something into a search box. All of these interaction paths are valuable inputs into an in-app agent.
 
