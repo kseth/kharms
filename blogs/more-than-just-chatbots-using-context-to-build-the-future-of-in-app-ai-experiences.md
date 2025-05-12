@@ -38,7 +38,7 @@ Specifically, existing embedded experiences suffer in three key ways:
 
 Within an app, a user’s interactions can follow many distinct paths — they might navigate pages by clicking on a link, they might close an announcement modal, or they might type something into a search box. All of these interaction paths are valuable inputs into an in-app agent.
 
-![Design exploration of in-app embedded agents](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w0jdor26ka9hgapwy691.png)
+![Design exploration of in-app embedded agents](/blogs/images/more-than-just-chatbots-1.png)
 
 Consider the design exploration above where a user wants to know what the *Enabled* status refers to. The user might’ve been able to make progress through a chatbot, but their journey would’ve been a lot more circuitous. They would likely need to explain the *Enabled* selector and situate it within the *Monitoring* column of the *Integrations* page. After that, they’d need to carefully create a prompt about the action to get a consistent answer.
 
@@ -54,7 +54,7 @@ Say a user enters the following query: “weather tomorrow”. Our system needs 
 
 Even with these harder cases and substitutes, being able to identify a user’s time and geolocation to provide the most likely weather produces a better experience than asking the user for clarification. The context-less journey, the one where the user has to add additional inputs or take extra steps, is easier to build because it requires exact specification, but it’s also less rewarding and definitely less magical.
 
-![Contextual search engine diagram](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sqcbfjeptu29anphaqed.png)
+![Contextual search engine diagram](/blogs/images/more-than-just-chatbots-2.png)
 
 A diagram of Google’s design and architecture for an embedded contextual search system within a camera forum (taken from *[Aggregating context data for programmable search engines](https://patents.google.com/patent/US8756210)*).
 
@@ -71,7 +71,7 @@ This modality suffers from the same problems we encountered earlier in *Why not 
 
 We can solve both of these problems through the use of dynamic context. Dynamic contexts are those that we can collect within an app at runtime — they differ per user and session and are tied to the things a user is seeing and interacting with.
 
-![Dynamic contexts to consider for inputs](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pnfm6qdetopdruxjqnsy.png)
+![Dynamic contexts to consider for inputs](/blogs/images/more-than-just-chatbots-3.png)
 
 When we collect dynamic in-app contexts, we need to prioritize three key factors: latency, density, and informativeness. We want to make sure that dynamic contexts can be gathered quickly, that they’re compact enough to process and send over-the-wire, and that they capture independently valuable information.
 
@@ -99,7 +99,7 @@ To satisfy all of these potential entry points, we need to build a retrieval sys
 
 We start by processing static contexts like sources and actions through multiple embeddings models. Whenever sources are added, sources crawled, or actions updated, we’ll run them (and their metadata, like a document’s title or an action’s description) through our models and store the embeddings for future consumption (possibly in a vector DB, but we’ve found [pgvector](https://github.com/pgvector/pgvector) works just fine for moderate volumes).
 
-![Inputs and ML models diagram](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iiofmupx67esry3ooedd.png)
+![Inputs and ML models diagram](/blogs/images/more-than-just-chatbots-4.png)
 
 These are a rough collection embedding models that we’ve found to be particularly useful for the in-app contexts outlined above:
 
@@ -224,7 +224,7 @@ User: Provide a brief explanation of what the {element.innerText} {element.type}
 User: Provide a brief explanation and next steps for how the user should respond to {runtime.error}.
 ```
 
-![Inputs, ML models, Outputs diagram](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s3ejimj5fag6fem9klti.png)
+![Inputs, ML models, Outputs diagram](/blogs/images/more-than-just-chatbots-5.png)
 
 As with customizing embeddings and tuning weights during retrieval, engineering a system of prompts for multiple contexts and queries is a highly iterative process that requires care and attention as LLMs and contexts evolve. We’ve found that we can go a long way by continuously testing the model and seeing how results match expectations. Likewise, we’ve found that refinement along these axes is much closer to A / B testing than model optimization since the outcomes being optimized are heavily user dependent.
 
