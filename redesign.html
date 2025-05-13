@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redesign</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+            /* Prevent body scroll when container scrolls */
+            overflow: hidden;
+        }
+
+        .scroll-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            height: 100vh;
+            min-height: 600px;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 1.5rem;
+            box-sizing: border-box;
+            position: relative;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .content {
+            max-width: 700px;
+            width: 100%;
+            animation: contentFadeIn 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        @keyframes contentFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content h1 {
+            font-size: clamp(2.25rem, 5vw, 3.25rem);
+            color: #343a40;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .content p {
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+            margin-bottom: 1.5rem;
+            color: #495057;
+        }
+
+        .prev-section-preview,
+        .next-section-preview {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .prev-section-preview {
+            top: 2.5rem;
+        }
+
+        .next-section-preview {
+            bottom: 2.5rem;
+        }
+
+        .prev-section-preview a,
+        .next-section-preview a {
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .prev-section-preview h2,
+        .next-section-preview h2 {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #6c757d;
+            opacity: 0.65;
+            margin: 0;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: opacity 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+        }
+
+        .prev-section-preview a:hover h2,
+        .next-section-preview a:hover h2,
+        .prev-section-preview a:focus h2,
+        .next-section-preview a:focus h2 {
+             opacity: 0.85;
+             color: #495057;
+             background-color: rgba(255, 255, 255, 0.35);
+             border-color: #adb5bd;
+        }
+
+        .prev-section-preview a:focus h2,
+        .next-section-preview a:focus h2 {
+             box-shadow: none;
+        }
+
+        .prev-section-preview a:focus,
+        .next-section-preview a:focus {
+             outline: none;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 1rem;
+                min-height: 550px;
+            }
+            .prev-section-preview {
+                top: 1.5rem;
+            }
+            .next-section-preview {
+                bottom: 1.5rem;
+            }
+            .prev-section-preview h2,
+            .next-section-preview h2 {
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-container">
+        <section id="about">
+            <div class="content">
+                <h1>About Me</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Scroll down or click the preview below to see some of my work.</p>
+            </div>
+            <div class="next-section-preview">
+                <a href="#my-work" aria-label="Scroll to My Work section">
+                    <h2>My Work</h2>
+                </a>
+            </div>
+        </section>
+
+        <section id="my-work">
+            <div class="prev-section-preview">
+                <a href="#about" aria-label="Scroll to About Me section">
+                    <h2>About Me</h2> </a>
+            </div>
+            <div class="content">
+                <h1>My Work</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Discover how to get in touch next.</p>
+            </div>
+            <div class="next-section-preview">
+                <a href="#contact" aria-label="Scroll to Contact section">
+                    <h2>Contact</h2>
+                </a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="prev-section-preview">
+                <a href="#my-work" aria-label="Scroll to My Work section">
+                    <h2>My Work</h2> </a>
+            </div>
+            <div class="content">
+                <h1>Contact</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Thanks for visiting!</p>
+            </div>
+            </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const previewLinks = document.querySelectorAll('.prev-section-preview a, .next-section-preview a');
+
+            previewLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+
+                        this.blur();
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
