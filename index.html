@@ -4,46 +4,184 @@
     <title>kharms</title>
     <link rel="icon" type="image/png" href="./road.png" />
     <meta name="description" content="A bit about me (@kseth), Karthik, aggregated under Daniil Kharm’s name.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://kharms.ai/" />
     <style>
+      /* Body Reset & Background */
       body {
-        display: flex;
-        flex-direction: column;
-        padding: 3rem;
-        gap: 1.25rem;
-        font-family: sans-serif;
         margin: 0;
-        max-width: 40rem;
-        justify-self: center;
+        padding: 0;
+        background-color: #fff; /* Assuming white as per instructions */
+        color: #333;
+        font-family: Arial, sans-serif;
       }
-      h1 {
-        margin: 0;
-        font-weight: lighter;
-        font-size: 1.75rem;
+
+      /* Container Styling */
+      .container {
+        margin: 0 auto;
+        max-width: 700px;
+        padding: 2rem;
       }
-      h1:not(:first-child) {
-        margin-top: 1.5rem;
+
+      /* Header Styling */
+      header {
+        text-align: center; /* For centering block content like the image */
+        margin-bottom: 1.5rem; /* Adjusted from original h1 margin */
+        margin-top: 0;
       }
-      h2 {
-        margin: 0;
-        font-weight: lighter;
+
+      /* Removed header h1 specific text styles as it's replaced by an image */
+      /* header h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 2.5rem;
+        font-weight: normal;
+        margin-bottom: 2rem;
+        text-align: center;
+        margin-top: 0;
+      } */
+
+      .logo-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 80px;
+        width: auto; /* Maintain aspect ratio */
+        margin-bottom: 1.5rem; /* Spacing below logo */
+      }
+
+      /* Content Headings */
+      .container > h1 { /* Target h1 directly under container, excluding header h1 */
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 1.8rem;
+        font-weight: normal;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .container > h2 { /* Target h2 directly under container */
+        font-family: Georgia, "Times New Roman", Times, serif;
         font-size: 1.5rem;
+        font-weight: normal;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
       }
-      h2:not(:first-child) {
-        margin-top: 0.75rem;
-      }
+
+      /* Paragraph Styling */
       p {
-        font-size: 1rem;
-        line-height: 1.25rem;
-        margin: 0;
+        font-family: Helvetica, Arial, sans-serif; /* Consistent sans-serif */
+        font-size: 1.1rem; /* Slightly larger base font */
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      /* Link Styling */
+      a {
+        color: #444;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Horizontal Rule Styling */
+      hr {
+        border: 0;
+        height: 1px;
+        background-color: #ccc;
+        margin: 3rem 0;
+      }
+
+      /* Footer Styling */
+      footer {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 3rem;
+        padding-top: 1rem;
+        text-align: center;
+      }
+
+      @media (max-width: 700px) {
+        .container {
+          padding: 1rem;
+        }
+        header {
+          margin-bottom: 1rem; /* Adjusted header margin for mobile */
+        }
+        .logo-image {
+          max-height: 60px; /* Optionally adjust logo size for mobile */
+          margin-bottom: 1rem; /* Adjust margin for mobile */
+        }
+        /* Removed header h1 from media query as it's replaced */
+        /* header h1 {
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
+        } */
+        .container > h1 { /* Assuming these are the main section titles */
+          font-size: 1.5rem;
+          margin-top: 2rem;
+        }
+        .container h2 { /* Corrected selector as per instruction example */
+          font-size: 1.3rem;
+          margin-top: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+        hr {
+          margin: 2rem 0;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #1e1e1e; /* Dark background */
+            color: #e0e0e0;           /* Light text */
+        }
+
+        /* Assuming .container has no background of its own, it will inherit the body's background. */
+        /* If .container had a light background, we would need to set it to a dark one too. */
+
+        /* Headings - they should inherit the body's new default color,
+           but we can make them a bit brighter if needed. For now, rely on inheritance. */
+        /* .container > h1, .container h2 {
+            color: #f0f0f0;
+        } */
+
+        /* Links */
+        a {
+            color: #87cefa; /* Light blue for links in dark mode */
+        }
+        a:hover {
+            color: #add8e6; /* Lighter blue on hover */
+        }
+
+        /* Horizontal Rules */
+        hr {
+            background-color: #444; /* Darker gray for HRs */
+        }
+
+        /* Footer - should inherit text color, but can be specified if needed */
+        /* footer {
+            color: #c0c0c0; /* Slightly dimmer light text for footer if desired */
+        /* } */
+
+        .logo-image {
+            filter: invert(1) hue-rotate(180deg);
+        }
       }
     </style>
   </head>
   <body>
+    <div class="container">
+      <header>
+        <img src="./road.png" alt="Karthik - kharms.ai" class="logo-image">
+      </header>
     <h1>hi</h1>
     <p>
       I'm Karthik - this is a place where I track the things I'm interested in and the things I've worked on for the last decade+.
     </p>
+    <hr>
     <h1>(my) work</h1>
     <h2>professional</h2>
       <p>
@@ -56,6 +194,7 @@
           What's in a pattern: Semantic pattern inference from samples of semi-structured text
         </a>
       </p>
+    <hr>
     <h2>academic</h2>
     <p>
       <a href="/publications/BarbuSethuramanLevySyntheticLikelihoodSER2014.pdf" rel="noopener noreferrer" target="_blank">
@@ -72,12 +211,14 @@
         Imputation(s) via Random Forest: Vaccination coverage inference for children exempted from school-entry immunization mandates
       </a>
     </p>
+    <hr>
     <h2>poetry</h2>
     <p>
       <a href="https://aaww.org/kuruvi-two-poems-by-karthik-sethuraman" rel="noopener noreferrer" target="_blank">Kuruvi & Mackinaw</a>, 
       <a href="https://www.havehashad.com/hadposts/the-peacocks" rel="noopener noreferrer" target="_blank">The Peacocks</a>, and
       <a href="https://blacklawrencepress.com/books/prayer-under-eyelids/" rel="noopener noreferrer" target="_blank">Prayer Under Eyelids</a>
     </p>
+    <hr>
     <h1>(why) kharms</h1>
     <p>
       He starved to death in a psychiatric ward during the siege of Leningrad. A
@@ -92,14 +233,18 @@
       scrap. When asked what it did, he would retort, “Nothing. It’s just a
       machine.”
     </p>
-    <p>
-      <a
-        href="https://books.google.com/books/publisher/content?id=OzuEDwAAQBAJ&pg=PT22&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U3utC0BgEX5rLNtCbNrsVz7m9XkJw&w=1280"
-        rel="noopener noreferrer"
-        target="_blank"
-      >[*]</a>,
-      <a href="https://github.com/kseth/kharms" rel="noopener noreferrer" target="_blank">[**]</a>, and
-      <a href="https://www.linkedin.com/in/karthikramen/" rel="noopener noreferrer" target="_blank">[***]</a>
-    </p>
+    <hr>
+    <footer>
+      <p>
+        <a
+          href="https://books.google.com/books/publisher/content?id=OzuEDwAAQBAJ&pg=PT22&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U3utC0BgEX5rLNtCbNrsVz7m9XkJw&w=1280"
+          rel="noopener noreferrer"
+          target="_blank"
+        >[*]</a>,
+        <a href="https://github.com/kseth/kharms" rel="noopener noreferrer" target="_blank">[**]</a>, and
+        <a href="https://www.linkedin.com/in/karthikramen/" rel="noopener noreferrer" target="_blank">[***]</a>
+      </p>
+    </footer>
+    </div>
   </body>
 </html>
