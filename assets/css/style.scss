@@ -4,11 +4,11 @@
 @import "{{ site.theme }}";
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif !important;
 }
 
-.logo-link {
-  margin-right: 1rem;
-  max-height: 80px;
-  width: auto;
+.logo-link img {
+  margin-right: 0.25em;
+  vertical-align: middle;
+  height: 1.75em;
 }

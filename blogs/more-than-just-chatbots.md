@@ -1,10 +1,12 @@
-# More than just chatbots: Using context to build the future of in-app AI assistance
-
+---
+title: More than just chatbots
+description: Using context to build the future of in-app AI assistance
+---
 _Written in 2023 for Dopt (now a part of Airtable) as a part of a series on AI_
 
 ## Chatbots dominate in-app experiences
 
-Today, text-driven, turn-based chatbots dominate AI experiences. They're generic and over-used, and they typically fall short.
+Today, text-driven, turn-based chatbots dominate AI experiences. They’re generic and over-used, and they typically fall short.
 
 We believe there’s a more interesting problem to solve: building in-app AI assistance. We believe there’s a huge opportunity to help users learn, navigate, and use the interfaces they already work within. What if we could create AI agents that offer contextual help seamlessly integrated into a user’s experience without the user ever needing to think about what specific question to ask or prompt to write?
 
