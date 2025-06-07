@@ -1,10 +1,8 @@
 ---
 title: More than just chatbots
 description: Using context to build the future of in-app AI assistance
+layout: blog
 ---
-# More than just chatbots
-**Using context to build the future of in-app AI assistance**
-
 *Written in 2023 for Dopt (now a part of Airtable) as a part of a series on AI*
 
 ## Chatbots dominate in-app experiences
