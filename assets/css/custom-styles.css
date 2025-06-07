@@ -1,0 +1,145 @@
+/* Body Reset & Background */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+  font-family: "Inter", sans-serif;
+}
+
+/* Container Styling */
+.container {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 1.5rem;
+}
+
+/* Header Styling */
+header {
+  text-align: center; /* For centering block content like the image */
+  margin-bottom: 1rem; /* Adjusted from original h1 margin */
+  margin-top: 0;
+}
+
+/* Removed header h1 specific text styles as it's replaced by an image */
+
+.logo-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 80px;
+  width: auto; /* Maintain aspect ratio */
+  margin-bottom: 1rem; /* Spacing below logo */
+}
+
+/* Content Headings */
+.container > h1 { /* Target h1 directly under container, excluding header h1 */
+  font-family: "Inter", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.container > h2 { /* Target h2 directly under container */
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Paragraph Styling */
+p {
+  font-family: "Inter", sans-serif; /* Consistent sans-serif */
+  font-size: 1.1rem; /* Slightly larger base font */
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+/* Link Styling */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Horizontal Rule Styling */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin: 2rem 0;
+}
+
+/* Footer Styling */
+footer {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0.75rem;
+  }
+  header {
+    margin-bottom: 0.75rem; /* Adjusted header margin for mobile */
+  }
+  .logo-image {
+    max-height: 60px; /* Optionally adjust logo size for mobile */
+    margin-bottom: 0.75rem; /* Adjust margin for mobile */
+  }
+  /* Removed header h1 from media query as it's replaced */
+  .container > h1 { /* Assuming these are the main section titles */
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .container h2 { /* Corrected selector as per instruction example */
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  hr {
+    margin: 1.5rem 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #1e1e1e; /* Dark background */
+      color: #e0e0e0;           /* Light text */
+  }
+
+  /* Assuming .container has no background of its own, it will inherit the body's background. */
+  /* If .container had a light background, we would need to set it to a dark one too. */
+
+  /* Headings - they should inherit the body's new default color,
+      but we can make them a bit brighter if needed. For now, rely on inheritance. */
+
+  /* Links */
+  a {
+      color: #87cefa; /* Light blue for links in dark mode */
+  }
+  a:hover {
+      color: #add8e6; /* Lighter blue on hover */
+  }
+
+  /* Horizontal Rules */
+  hr {
+      background-color: #444; /* Darker gray for HRs */
+  }
+
+  /* Footer - should inherit text color, but can be specified if needed */
+
+  .logo-image {
+      filter: invert(1) hue-rotate(180deg);
+  }
+}
