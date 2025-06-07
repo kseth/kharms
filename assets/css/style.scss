@@ -7,6 +7,16 @@ body {
   font-family: "Inter", sans-serif !important;
 }
 
+h1 .blog-title {
+  margin-bottom: 0.25em;
+}
+
+h1 .blog-description {
+  font-size: $h2-size-mobile !important;
+
+  @include breakpoint(md) { font-size: $h2-size !important; }
+}
+
 .logo-link img {
   margin-right: 0.25em;
   vertical-align: middle;

@@ -20,9 +20,13 @@
       {% endif %}
       {% if page.title %}
       <h1>
-        {{ page.title }}
+        <div class="blog-title">
+          {{ page.title }}
+        </div>
         {% if page.description %}
-        {{ page.description }}
+        <div class="blog-description">
+          {{ page.description }}
+        </div>
         {% endif %}
       </h1>
       {% endif %}
