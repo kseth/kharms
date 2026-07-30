@@ -1,11 +1,11 @@
 ---
 title: More than just chatbots
-description: Using context to build the future of in-app AI assistance
+description: Using context to build the future of embedded AI experiences
 layout: blog
 ---
 *Written in 2023 for Dopt (now a part of Airtable) as a part of a series on AI*
 
-## Chatbots dominate in-app experiences
+## Chatbots dominate embedded experiences
 
 Today, text-driven, turn-based chatbots dominate AI experiences. They’re generic and over-used, and they typically fall short.
 
