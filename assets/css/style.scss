@@ -13,8 +13,6 @@ h1 .blog-description {
   @include breakpoint(md) { font-size: $h2-size !important; }
 }
 
-.logo-link img {
+.logo-link {
   margin-right: 0.25em;
-  vertical-align: middle;
-  height: 1.75em;
 }

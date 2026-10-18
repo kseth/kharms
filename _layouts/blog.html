@@ -6,15 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/ascii-road.css" | relative_url }}">
+    <script src="{{ "/assets/js/ascii-road.js" | relative_url }}" defer></script>
     <link rel="icon" type="image/png" href="/assets/road.png" />
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       {% if site.title and site.title != page.title %}
       <h1>
-        <a href="{{ "/" | absolute_url }}" class="logo-link">
-          <img src="/assets/road.png" alt="kharms.ai">
-        </a>
+        <a href="{{ "/" | absolute_url }}" class="logo-link road-link" aria-label="kharms.ai home"><span class="ascii-road" aria-hidden="true">         .
+        / \
+       / . \
+      /     \
+     /   |   \
+    /    |    \
+   /           \
+  /             \
+ /       |       \
+/        |        \</span></a>
         <a href="{{ "/" | absolute_url }}">{{ site.title }}</a>
       </h1>
       {% endif %}

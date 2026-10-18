@@ -1,0 +1,33 @@
+a.road-link {
+  display: inline-block;
+  vertical-align: middle;
+  color: inherit;
+}
+
+a.road-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.road-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.ascii-road {
+  display: block;
+  width: 19ch;
+  height: 80px;
+  font: 8px/8px ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  letter-spacing: 0;
+  white-space: pre;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .ascii-road {
+    height: 60px;
+    font-size: 6px;
+    line-height: 6px;
+  }
+}
