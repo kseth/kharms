@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+  --site-background: #fff;
+  --site-text: #333;
+  --site-link: #007bff;
+  --site-link-hover: #007bff;
+  --site-muted: #666;
+  --site-border: #ccc;
+  --site-surface: #f6f6f6;
+  --code-comment: #666;
+  --code-keyword: #005cc5;
+  --code-string: #a31515;
+  --code-number: #08646b;
+  --code-name: #6f42c1;
+  --code-error: #b31d28;
+  --code-error-background: #ffeef0;
+  --code-added: #22863a;
+  --code-added-background: #e6ffed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --site-background: #1e1e1e;
+    --site-text: #e0e0e0;
+    --site-link: #87cefa;
+    --site-link-hover: #add8e6;
+    --site-muted: #a0a0a0;
+    --site-border: #444;
+    --site-surface: #282828;
+    --code-comment: #a0a0a0;
+    --code-keyword: #87cefa;
+    --code-string: #b5cea8;
+    --code-number: #d7ba7d;
+    --code-name: #d7aefb;
+    --code-error: #ffb3b3;
+    --code-error-background: #3b2525;
+    --code-added: #b5cea8;
+    --code-added-background: #263326;
+  }
+}

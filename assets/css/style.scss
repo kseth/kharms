@@ -16,3 +16,110 @@ h1 .blog-description {
 .logo-link {
   margin-right: 0.25em;
 }
+
+/* Keep the Markdown theme's typography and layout, using the site's palette. */
+body {
+  background-color: var(--site-background);
+  color: var(--site-text);
+}
+
+.markdown-body {
+  color: var(--site-text);
+}
+
+.markdown-body a {
+  color: var(--site-link);
+}
+
+.markdown-body a:hover {
+  color: var(--site-link-hover);
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-color: var(--site-border);
+}
+
+.markdown-body hr {
+  background-color: var(--site-border);
+}
+
+.markdown-body blockquote,
+.markdown-body h6 {
+  color: var(--site-muted);
+  border-color: var(--site-border);
+}
+
+.markdown-body img {
+  background-color: transparent;
+}
+
+.markdown-body table th,
+.markdown-body table td,
+.markdown-body table tr {
+  border-color: var(--site-border);
+}
+
+.markdown-body table tr {
+  background-color: var(--site-background);
+}
+
+.markdown-body table tr:nth-child(2n),
+.markdown-body code,
+.markdown-body tt,
+.markdown-body pre,
+.markdown-body .highlight,
+.markdown-body .highlight pre {
+  background-color: var(--site-surface);
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+  background-color: transparent;
+}
+
+.markdown-body kbd {
+  color: var(--site-text);
+  background-color: var(--site-surface);
+  border-color: var(--site-border);
+  box-shadow: inset 0 -1px 0 var(--site-border);
+}
+
+/* Own Rouge's colors in both modes, including tokens not styled below. */
+.markdown-body .highlight,
+.markdown-body .highlight span {
+  color: inherit;
+}
+
+.markdown-body .highlight :is(.c, .cd, .cm, .c1, .cp, .cs, .go, .gp, .gh, .gu) {
+  color: var(--code-comment);
+}
+
+.markdown-body .highlight :is(.k, .kv, .kc, .kd, .kn, .kp, .kr, .kt, .ow, .o) {
+  color: var(--code-keyword);
+}
+
+.markdown-body .highlight :is(.s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sr, .ss, .sx) {
+  color: var(--code-string);
+}
+
+.markdown-body .highlight :is(.m, .mb, .mf, .mh, .mi, .mo, .mx, .il) {
+  color: var(--code-number);
+}
+
+.markdown-body .highlight :is(.na, .nb, .nc, .nd, .ne, .nf, .nl, .nn, .no, .nt, .nv, .vc, .vg, .vi, .bp) {
+  color: var(--code-name);
+}
+
+.markdown-body .highlight :is(.err, .gr, .gt, .gd) {
+  color: var(--code-error);
+}
+
+.markdown-body .highlight :is(.err, .gd) {
+  background-color: var(--code-error-background);
+}
+
+.markdown-body .highlight .gi {
+  color: var(--code-added);
+  background-color: var(--code-added-background);
+}

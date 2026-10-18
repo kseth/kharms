@@ -2,8 +2,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--site-background);
+  color: var(--site-text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -48,11 +48,12 @@ p {
 
 /* Link Styling */
 a {
-  color: #007bff;
+  color: var(--site-link);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--site-link-hover);
   text-decoration: underline;
 }
 
@@ -60,14 +61,14 @@ a:hover {
 hr {
   border: 0;
   height: 1px;
-  background-color: #ccc;
+  background-color: var(--site-border);
   margin: 2rem 0;
 }
 
 /* Footer Styling */
 footer {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--site-muted);
   margin-top: 2rem;
   padding-top: 1rem;
   text-align: center;
@@ -95,33 +96,4 @@ footer {
   hr {
     margin: 1.5rem 0;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-      background-color: #1e1e1e; /* Dark background */
-      color: #e0e0e0;           /* Light text */
-  }
-
-  /* Assuming .container has no background of its own, it will inherit the body's background. */
-  /* If .container had a light background, we would need to set it to a dark one too. */
-
-  /* Headings - they should inherit the body's new default color,
-      but we can make them a bit brighter if needed. For now, rely on inheritance. */
-
-  /* Links */
-  a {
-      color: #87cefa; /* Light blue for links in dark mode */
-  }
-  a:hover {
-      color: #add8e6; /* Lighter blue on hover */
-  }
-
-  /* Horizontal Rules */
-  hr {
-      background-color: #444; /* Darker gray for HRs */
-  }
-
-  /* Footer - should inherit text color, but can be specified if needed */
-
 }
