@@ -15,28 +15,7 @@
       <h1>
         <a href="{{ "/" | absolute_url }}" class="logo-link road-link" aria-label="kharms.ai home">
           <svg class="road-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" aria-hidden="true" focusable="false">
-            <defs>
-              <clipPath id="road-window">
-                <rect x="35" y="14" width="10" height="52" />
-              </clipPath>
-            </defs>
-            <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
-              <path class="road-edges" d="M27 17 L13 63 M53 17 L67 63" />
-              <g clip-path="url(#road-window)">
-                <g class="road-flow" transform="translate(40 21) scale(.52 .28)">
-                  <path d="M0 -3 V3" />
-                </g>
-                <g class="road-flow road-flow--two" transform="translate(40 37) scale(.68 .46)">
-                  <path d="M0 -3 V3" />
-                </g>
-                <g class="road-flow road-flow--three" transform="translate(40 57) scale(.93 .86)">
-                  <path d="M0 -3 V3" />
-                </g>
-                <g class="road-flow road-flow--four" transform="translate(40 14) scale(.48 .23)">
-                  <path d="M0 -3 V3" />
-                </g>
-              </g>
-            </g>
+            <use href="{{ "/assets/road.svg" | relative_url }}#road"></use>
           </svg>
         </a>
         <a href="{{ "/" | absolute_url }}">{{ site.title }}</a>

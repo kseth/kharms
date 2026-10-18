@@ -18,36 +18,14 @@ a.road-link:hover {
   display: block;
   width: 80px;
   height: 80px;
+  /* Forward motion preferences to the external SVG. */
+  --road-animation-name: road-approach;
+  --road-four-display: inline;
 }
 
-.road-flow {
-  transform-origin: 0 0;
-  animation: road-approach 3.6s linear infinite;
-}
-
-.road-flow--two { animation-delay: -0.9s; }
-.road-flow--three { animation-delay: -1.8s; }
-.road-flow--four { animation-delay: -2.7s; }
-
-.road-link:hover .road-flow,
-.road-link:focus-visible .road-flow {
-  animation-play-state: paused;
-}
-
-/* Center markings grow and accelerate as they approach the viewer. */
-@keyframes road-approach {
-  0% {
-    transform: translate(40px, 17px) scale(0.4815, 0.232);
-    opacity: 0;
-  }
-  10%, 90% { opacity: 1; }
-  25% { transform: translate(40px, 23.35px) scale(0.5353, 0.287); }
-  50% { transform: translate(40px, 31.95px) scale(0.6175, 0.381); }
-  75% { transform: translate(40px, 44.15px) scale(0.7516, 0.565); }
-  100% {
-    transform: translate(40px, 63px) scale(1, 1);
-    opacity: 0;
-  }
+.road-link:hover,
+.road-link:focus-visible {
+  --road-play-state: paused;
 }
 
 @media (max-width: 700px) {
@@ -58,8 +36,8 @@ a.road-link:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .road-flow {
-    animation: none;
+  .road-logo {
+    --road-animation-name: none;
+    --road-four-display: none;
   }
-  .road-flow--four { display: none; }
 }

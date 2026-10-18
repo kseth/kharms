@@ -1,0 +1,64 @@
+<svg id="road" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <style>
+    .road-flow {
+      transform-origin: 0 0;
+      animation-name: var(--road-animation-name, road-approach);
+      animation-duration: 3.6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: var(--road-play-state, running);
+    }
+
+    .road-flow--two { animation-delay: -0.9s; }
+    .road-flow--three { animation-delay: -1.8s; }
+    .road-flow--four {
+      animation-delay: -2.7s;
+      display: var(--road-four-display, inline);
+    }
+
+    /* Center markings grow and accelerate as they approach the viewer. */
+    @keyframes road-approach {
+      0% {
+        transform: translate(40px, 17px) scale(0.4815, 0.232);
+        opacity: 0;
+      }
+      10%, 90% { opacity: 1; }
+      25% { transform: translate(40px, 23.35px) scale(0.5353, 0.287); }
+      50% { transform: translate(40px, 31.95px) scale(0.6175, 0.381); }
+      75% { transform: translate(40px, 44.15px) scale(0.7516, 0.565); }
+      100% {
+        transform: translate(40px, 63px) scale(1, 1);
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .road-flow {
+        animation-name: var(--road-animation-name, none);
+      }
+      .road-flow--four { display: var(--road-four-display, none); }
+    }
+  </style>
+  <defs>
+    <clipPath id="road-window">
+      <rect x="35" y="14" width="10" height="52" />
+    </clipPath>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+    <path class="road-edges" d="M27 17 L13 63 M53 17 L67 63" />
+    <g clip-path="url(#road-window)">
+      <g class="road-flow" transform="translate(40 21) scale(.52 .28)">
+        <path d="M0 -3 V3" />
+      </g>
+      <g class="road-flow road-flow--two" transform="translate(40 37) scale(.68 .46)">
+        <path d="M0 -3 V3" />
+      </g>
+      <g class="road-flow road-flow--three" transform="translate(40 57) scale(.93 .86)">
+        <path d="M0 -3 V3" />
+      </g>
+      <g class="road-flow road-flow--four" transform="translate(40 14) scale(.48 .23)">
+        <path d="M0 -3 V3" />
+      </g>
+    </g>
+  </g>
+</svg>
