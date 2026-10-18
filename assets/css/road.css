@@ -1,0 +1,65 @@
+a.road-link {
+  display: inline-block;
+  vertical-align: middle;
+  color: inherit;
+}
+
+a.road-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.road-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.road-logo {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.road-flow {
+  transform-origin: 0 0;
+  animation: road-approach 3.6s linear infinite;
+}
+
+.road-flow--two { animation-delay: -0.9s; }
+.road-flow--three { animation-delay: -1.8s; }
+.road-flow--four { animation-delay: -2.7s; }
+
+.road-link:hover .road-flow,
+.road-link:focus-visible .road-flow {
+  animation-play-state: paused;
+}
+
+/* Center markings grow and accelerate as they approach the viewer. */
+@keyframes road-approach {
+  0% {
+    transform: translate(40px, 17px) scale(0.4815, 0.232);
+    opacity: 0;
+  }
+  10%, 90% { opacity: 1; }
+  25% { transform: translate(40px, 23.35px) scale(0.5353, 0.287); }
+  50% { transform: translate(40px, 31.95px) scale(0.6175, 0.381); }
+  75% { transform: translate(40px, 44.15px) scale(0.7516, 0.565); }
+  100% {
+    transform: translate(40px, 63px) scale(1, 1);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .road-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .road-flow {
+    animation: none;
+  }
+  .road-flow--four { display: none; }
+}

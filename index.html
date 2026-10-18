@@ -8,22 +8,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://kharms.ai/" />
     <link rel="stylesheet" href="/assets/css/custom-styles.css">
-    <link rel="stylesheet" href="/assets/css/ascii-road.css">
-    <script src="/assets/js/ascii-road.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/road.css">
   </head>
   <body>
     <div class="container">
       <header>
-        <a href="/" class="road-link" aria-label="kharms.ai home"><span class="ascii-road" aria-hidden="true">         .
-        / \
-       / . \
-      /     \
-     /   |   \
-    /    |    \
-   /           \
-  /             \
- /       |       \
-/        |        \</span></a>
+        <a href="/" class="road-link" aria-label="kharms.ai home">
+          <svg class="road-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" aria-hidden="true" focusable="false">
+            <defs>
+              <clipPath id="road-window">
+                <rect x="35" y="14" width="10" height="52" />
+              </clipPath>
+            </defs>
+            <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+              <path class="road-edges" d="M27 17 L13 63 M53 17 L67 63" />
+              <g clip-path="url(#road-window)">
+                <g class="road-flow" transform="translate(40 21) scale(.52 .28)">
+                  <path d="M0 -3 V3" />
+                </g>
+                <g class="road-flow road-flow--two" transform="translate(40 37) scale(.68 .46)">
+                  <path d="M0 -3 V3" />
+                </g>
+                <g class="road-flow road-flow--three" transform="translate(40 57) scale(.93 .86)">
+                  <path d="M0 -3 V3" />
+                </g>
+                <g class="road-flow road-flow--four" transform="translate(40 14) scale(.48 .23)">
+                  <path d="M0 -3 V3" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
       </header>
       <h1>hi</h1>
       <p>
